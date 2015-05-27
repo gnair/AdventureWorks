@@ -1,0 +1,222 @@
+﻿@model AdventureWorksWebAPI.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+
+    <div class="dl-horizontal">
+        <img src='@Url.Action( "Photo", "Images", new { id = Model.ProductProductPhotoes.First().ProductPhotoID } )' /> />
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MakeFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MakeFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishedGoodsFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishedGoodsFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SafetyStockLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SafetyStockLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReorderPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReorderPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StandardCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StandardCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaysToManufacture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaysToManufacture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Style)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Style)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscontinuedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscontinuedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rowguid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rowguid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductModel.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductModel.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSubcategory.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSubcategory.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitMeasure.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitMeasure.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitMeasure1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitMeasure1.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDocument.ProductID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDocument.ProductID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
