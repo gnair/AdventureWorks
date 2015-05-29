@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdventureWorksService
+namespace AdventureWorksService.Model
 {
     using System;
     using System.Data.Entity;
