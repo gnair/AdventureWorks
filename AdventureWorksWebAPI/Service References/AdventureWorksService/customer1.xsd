@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/AdventureWorksService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AdventureWorksService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9002/services/customer?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PersonID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StoreID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TerritoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rowguid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+</xs:schema>
