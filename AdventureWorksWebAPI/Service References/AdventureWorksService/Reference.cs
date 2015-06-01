@@ -8,3 +8,224 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace AdventureWorksWebAPI.AdventureWorksService {
+    using System.Runtime.Serialization;
+    using System;
+    
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://schemas.datacontract.org/2004/07/AdventureWorksService")]
+    [System.SerializableAttribute()]
+    public partial class Customer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PersonIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> StoreIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TerritoryIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid rowguidField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AccountNumber {
+            get {
+                return this.AccountNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountNumberField, value) != true)) {
+                    this.AccountNumberField = value;
+                    this.RaisePropertyChanged("AccountNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((this.CustomerIDField.Equals(value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PersonID {
+            get {
+                return this.PersonIDField;
+            }
+            set {
+                if ((this.PersonIDField.Equals(value) != true)) {
+                    this.PersonIDField = value;
+                    this.RaisePropertyChanged("PersonID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> StoreID {
+            get {
+                return this.StoreIDField;
+            }
+            set {
+                if ((this.StoreIDField.Equals(value) != true)) {
+                    this.StoreIDField = value;
+                    this.RaisePropertyChanged("StoreID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TerritoryID {
+            get {
+                return this.TerritoryIDField;
+            }
+            set {
+                if ((this.TerritoryIDField.Equals(value) != true)) {
+                    this.TerritoryIDField = value;
+                    this.RaisePropertyChanged("TerritoryID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid rowguid {
+            get {
+                return this.rowguidField;
+            }
+            set {
+                if ((this.rowguidField.Equals(value) != true)) {
+                    this.rowguidField = value;
+                    this.RaisePropertyChanged("rowguid");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AdventureWorksService.ICustomerService")]
+    public interface ICustomerService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/Echo", ReplyAction="http://tempuri.org/ICustomerService/EchoResponse")]
+        string Echo(string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/Echo", ReplyAction="http://tempuri.org/ICustomerService/EchoResponse")]
+        System.Threading.Tasks.Task<string> EchoAsync(string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomers", ReplyAction="http://tempuri.org/ICustomerService/GetCustomersResponse")]
+        AdventureWorksWebAPI.AdventureWorksService.Customer[] GetCustomers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomers", ReplyAction="http://tempuri.org/ICustomerService/GetCustomersResponse")]
+        System.Threading.Tasks.Task<AdventureWorksWebAPI.AdventureWorksService.Customer[]> GetCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/SendEmail", ReplyAction="http://tempuri.org/ICustomerService/SendEmailResponse")]
+        bool SendEmail(string customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/SendEmail", ReplyAction="http://tempuri.org/ICustomerService/SendEmailResponse")]
+        System.Threading.Tasks.Task<bool> SendEmailAsync(string customerId);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICustomerServiceChannel : AdventureWorksWebAPI.AdventureWorksService.ICustomerService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<AdventureWorksWebAPI.AdventureWorksService.ICustomerService>, AdventureWorksWebAPI.AdventureWorksService.ICustomerService {
+        
+        public CustomerServiceClient() {
+        }
+        
+        public CustomerServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CustomerServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CustomerServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CustomerServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public string Echo(string message) {
+            return base.Channel.Echo(message);
+        }
+        
+        public System.Threading.Tasks.Task<string> EchoAsync(string message) {
+            return base.Channel.EchoAsync(message);
+        }
+        
+        public AdventureWorksWebAPI.AdventureWorksService.Customer[] GetCustomers() {
+            return base.Channel.GetCustomers();
+        }
+        
+        public System.Threading.Tasks.Task<AdventureWorksWebAPI.AdventureWorksService.Customer[]> GetCustomersAsync() {
+            return base.Channel.GetCustomersAsync();
+        }
+        
+        public bool SendEmail(string customerId) {
+            return base.Channel.SendEmail(customerId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SendEmailAsync(string customerId) {
+            return base.Channel.SendEmailAsync(customerId);
+        }
+    }
+}

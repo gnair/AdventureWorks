@@ -22,10 +22,22 @@ namespace AdventureWorksService
 
         #region ICustomerService Members
 
+        public string Echo(string message)
+        {
+            return message;
+        }
+
         public List<Customer> GetCustomers()
         {
+            // TODO: Doesn't work. Why?
             var customers = db.Customers.Include(c => c.Person).Include(c => c.SalesTerritory).Include(c => c.Store);
             return Mapper.Map<List<Customer>>(customers.Take(100).ToList());
+        }
+
+        public bool SendEmail(string customerId)
+        {
+            // TODO: Implement a stub
+            return true;
         }
 
 		#endregion

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AdventureWorksWebAPI;
+using AdventureWorksWebAPI.AdventureWorksService;
 
 namespace AdventureWorksWebAPI.Controllers
 {
@@ -126,6 +127,18 @@ namespace AdventureWorksWebAPI.Controllers
             db.Customers.Remove(customer);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult SendEmail(string customerId)
+        {
+            // Send the email using the service.
+            CustomerServiceClient client = new CustomerServiceClient();
+
+            client.SendEmail(customerId);
+
+            client.Close();
+
+            return Json("true");
         }
 
         protected override void Dispose(bool disposing)

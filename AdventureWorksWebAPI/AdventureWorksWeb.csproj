@@ -577,13 +577,19 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Service References\AdventureWorksService\AdventureWorksWebAPI.AdventureWorksService.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\AdventureWorksService\customer.disco" />
     <None Include="Service References\AdventureWorksService\configuration91.svcinfo" />
     <None Include="Service References\AdventureWorksService\configuration.svcinfo" />
     <None Include="Service References\AdventureWorksService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

@@ -9,7 +9,13 @@ namespace AdventureWorksService
     interface ICustomerService
     {
         [OperationContract]
+        string Echo(string message);
+
+        [OperationContract]
         List<Customer> GetCustomers();
+
+        [OperationContract]
+        bool SendEmail(string customerId);
     }
 
     [DataContract]

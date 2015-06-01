@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eb2d1e75-3c31-427e-bcb9-a9a300b9e647" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="071dd19d-1014-45a5-a891-5c9100dc29d8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -13,19 +13,20 @@
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
-    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
     <ReferencedAssemblies />
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:9002/services/customer?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:9002/services/customer" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="customer.xsd" MetadataType="Schema" ID="83c02036-568a-435a-a6e2-b57e5fd5d4de" SourceId="1" SourceUrl="http://localhost:9002/services/customer?xsd=xsd0" />
-    <MetadataFile FileName="CustomerService.wsdl" MetadataType="Wsdl" ID="ec47dcff-23fd-4dd3-a3d4-adb6e73e47be" SourceId="1" SourceUrl="http://localhost:9002/services/customer?wsdl" />
-    <MetadataFile FileName="customer1.xsd" MetadataType="Schema" ID="2a21a7a1-9e05-414a-87c6-da553acf72e7" SourceId="1" SourceUrl="http://localhost:9002/services/customer?xsd=xsd2" />
-    <MetadataFile FileName="customer2.xsd" MetadataType="Schema" ID="69645759-58c8-4a1b-adf7-757ddc88695a" SourceId="1" SourceUrl="http://localhost:9002/services/customer?xsd=xsd1" />
+    <MetadataFile FileName="customer.xsd" MetadataType="Schema" ID="ebdd8346-052f-4489-8e36-25366fc6620e" SourceId="1" SourceUrl="http://localhost:9002/services/customer?xsd=xsd0" />
+    <MetadataFile FileName="customer.disco" MetadataType="Disco" ID="70799f48-118c-4ce4-a13c-083901dc7bc1" SourceId="1" SourceUrl="http://localhost:9002/services/customer?disco" />
+    <MetadataFile FileName="CustomerService.wsdl" MetadataType="Wsdl" ID="f124b24f-56af-4777-a361-fcae815abb6d" SourceId="1" SourceUrl="http://localhost:9002/services/customer?wsdl" />
+    <MetadataFile FileName="customer1.xsd" MetadataType="Schema" ID="48de5ed5-35bf-411a-9afa-e2e8f5879073" SourceId="1" SourceUrl="http://localhost:9002/services/customer?xsd=xsd2" />
+    <MetadataFile FileName="customer2.xsd" MetadataType="Schema" ID="b42efc99-20a1-4021-b6ef-84f4debb140a" SourceId="1" SourceUrl="http://localhost:9002/services/customer?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
