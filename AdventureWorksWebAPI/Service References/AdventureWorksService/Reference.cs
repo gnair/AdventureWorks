@@ -171,10 +171,10 @@ namespace AdventureWorksWebAPI.AdventureWorksService {
         System.Threading.Tasks.Task<AdventureWorksWebAPI.AdventureWorksService.Customer[]> GetCustomersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/SendEmail", ReplyAction="http://tempuri.org/ICustomerService/SendEmailResponse")]
-        bool SendEmail(string customerId);
+        bool SendEmail(int customerId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/SendEmail", ReplyAction="http://tempuri.org/ICustomerService/SendEmailResponse")]
-        System.Threading.Tasks.Task<bool> SendEmailAsync(string customerId);
+        System.Threading.Tasks.Task<bool> SendEmailAsync(int customerId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -220,11 +220,11 @@ namespace AdventureWorksWebAPI.AdventureWorksService {
             return base.Channel.GetCustomersAsync();
         }
         
-        public bool SendEmail(string customerId) {
+        public bool SendEmail(int customerId) {
             return base.Channel.SendEmail(customerId);
         }
         
-        public System.Threading.Tasks.Task<bool> SendEmailAsync(string customerId) {
+        public System.Threading.Tasks.Task<bool> SendEmailAsync(int customerId) {
             return base.Channel.SendEmailAsync(customerId);
         }
     }

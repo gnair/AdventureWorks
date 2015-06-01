@@ -34,7 +34,7 @@ namespace AdventureWorksService
             return Mapper.Map<List<Customer>>(customers.Take(100).ToList());
         }
 
-        public bool SendEmail(string customerId)
+        public bool SendEmail(int customerId)
         {
             // TODO: Implement a stub
             return true;

@@ -625,6 +625,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AdventureWorksService\CustomerService.wsdl" />
+    <Content Include="Views\Customers\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

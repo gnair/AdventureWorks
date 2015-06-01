@@ -15,20 +15,18 @@
             @Html.DisplayNameFor(model => model.AccountNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.rowguid)
+            @Html.DisplayNameFor(model => model.Person.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ModifiedDate)
+            @Html.DisplayNameFor(model => model.Person.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Person.PersonType)
+            Region
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SalesTerritory.Name)
+            Country
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Store.Name)
-        </th>
+        <th></th>
         <th></th>
     </tr>
 
@@ -38,24 +36,24 @@
             @Html.DisplayFor(modelItem => item.AccountNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.rowguid)
+            @Html.DisplayFor(modelItem => item.Person.FirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ModifiedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Person.PersonType)
+            @Html.DisplayFor(modelItem => item.Person.LastName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SalesTerritory.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Store.Name)
+            @Html.DisplayFor(modelItem => item.SalesTerritory.CountryRegion.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
             @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+        </td>
+        <td>
+            @Html.ActionLink("Send Email", "SendEmail", new { id = item.CustomerID }) 
         </td>
     </tr>
 }

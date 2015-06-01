@@ -1,0 +1,38 @@
+﻿@model AdventureWorksWebAPI.Customer
+
+@{
+    ViewBag.Title = "Email Confirmation";
+}
+
+<h3>Email was sent to this customer!</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.LastName)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

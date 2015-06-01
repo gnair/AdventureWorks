@@ -30,7 +30,7 @@
   <xs:element name="SendEmail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

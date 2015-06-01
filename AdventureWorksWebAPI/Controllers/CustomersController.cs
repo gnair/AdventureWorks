@@ -18,7 +18,7 @@ namespace AdventureWorksWebAPI.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.Person).Include(c => c.SalesTerritory).Include(c => c.Store);
+            var customers = db.Customers.Include(c => c.Person).Include(c => c.SalesTerritory).Include(c => c.Store).Where(c => c.Person != null).OrderBy(c => c.AccountNumber);
             return View(customers.Take(100).ToList());
         }
 
@@ -129,16 +129,27 @@ namespace AdventureWorksWebAPI.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult SendEmail(string customerId)
+        // GET: Customers/SendEmail/5
+        public ActionResult SendEmail(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
             // Send the email using the service.
             CustomerServiceClient client = new CustomerServiceClient();
 
-            client.SendEmail(customerId);
+            client.SendEmail(id.Value);
 
             client.Close();
 
-            return Json("true");
+            return View(customer);
         }
 
         protected override void Dispose(bool disposing)

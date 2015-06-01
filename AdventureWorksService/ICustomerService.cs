@@ -15,7 +15,7 @@ namespace AdventureWorksService
         List<Customer> GetCustomers();
 
         [OperationContract]
-        bool SendEmail(string customerId);
+        bool SendEmail(int customerId);
     }
 
     [DataContract]
