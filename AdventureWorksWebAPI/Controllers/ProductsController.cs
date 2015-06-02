@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AdventureWorksWebAPI;
+using AdventureWorksWebAPI.Models;
 
 namespace AdventureWorksWebAPI.Controllers
 {
@@ -14,10 +15,13 @@ namespace AdventureWorksWebAPI.Controllers
     {
         private AdventureWorks2014Entities db = new AdventureWorks2014Entities();
 
+
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductProductPhotoes).Where(p => (p.ProductProductPhotoes.FirstOrDefault().ProductPhotoID > 1));
+            var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductProductPhotoes)
+                                      //.Where(p => (p.ProductProductPhotoes.FirstOrDefault().ProductPhotoID > 1))
+                                      .OrderBy(p => p.Name);
             return View(products.ToList());
         }
 
@@ -25,8 +29,40 @@ namespace AdventureWorksWebAPI.Controllers
         // GET: Products/Category/T
         public ActionResult Category(string category)
         {
-            var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductProductPhotoes).Where(p => (p.ProductLine.Equals(category) && p.ProductProductPhotoes.FirstOrDefault().ProductPhotoID > 1));
-            return View(products.ToList());
+            var result = "Products";
+            var products = db.Products.Include(p => p.ProductSubcategory).Include(p => p.ProductProductPhotoes)
+                                      .OrderBy(p => p.Name);
+
+            if (category == "M" || category == "R" || category == "T")
+            {
+                result = (category == "M") ? "Mountain Bikes" : (category == "R") ? "Road Bikes" : "Tour Bikes";
+                products = db.Products.Include(p => p.ProductSubcategory).Include(p => p.ProductProductPhotoes)
+                                      .Where(p => (p.ProductLine.Equals(category) && p.ProductSubcategory.ProductCategory.Name == "Bikes"))
+                                      .OrderBy(p => p.Name);
+            }
+            else if (category == "A")
+            {
+                result = "Accessories";
+                products = db.Products.Include(p => p.ProductSubcategory).Include(p => p.ProductProductPhotoes)
+                                      .Where(p => (p.ProductSubcategory.ProductCategory.Name == "Accessories"))
+                                      .OrderBy(p => p.Name);
+            }
+            else if (category == "C")
+            {
+                result = "Clothing";
+                products = db.Products.Include(p => p.ProductSubcategory).Include(p => p.ProductProductPhotoes)
+                                      .Where(p => (p.ProductSubcategory.ProductCategory.Name == "Clothing"))
+                                      .OrderBy(p => p.Name);
+            }
+            else if (category == "P")
+            {
+                result = "Parts";
+                products = db.Products.Include(p => p.ProductSubcategory).Include(p => p.ProductProductPhotoes)
+                                      .Where(p => (p.ProductSubcategory.ProductCategory.Name == "Components"))
+                                      .OrderBy(p => p.Name);
+            }
+
+            return View(new ProductsVM { Category = result, Products = products.ToList() });
         }
 
 

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<AdventureWorksWebAPI.Product>
+﻿@model AdventureWorksWebAPI.Models.ProductsVM
 
 @{
-    ViewBag.Title = "Mountain Bikes";
+    ViewBag.Title = @Model.Category;
 }
 
-<h2>Mountain Bikes</h2>
+<h2>@Model.Category</h2>
 
 <table class="table">
     <tr>
@@ -12,36 +12,36 @@
             &nbsp;
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductNumber)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().ProductNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Color)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().Color)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ListPrice)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().ListPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Size)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().Size)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Weight)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().Weight)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductLine)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().ProductLine)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Class)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().Class)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Style)
+            @Html.DisplayNameFor(model => Model.Products.FirstOrDefault().Style)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Products) {
     <tr>
         <td>
             <a href="@Url.Action("Details", new { id = item.ProductID })"><img src='@Url.Action( "Thumbnail", "Images", new { id = item.ProductProductPhotoes.First().ProductPhotoID } )' />

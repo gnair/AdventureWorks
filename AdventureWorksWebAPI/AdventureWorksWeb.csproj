@@ -301,6 +301,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ProductsVM.cs" />
     <Compile Include="Password.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -523,9 +524,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\Accessory.gif" />
     <Content Include="Content\Bike.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Clothing.gif" />
+    <Content Include="Content\Component.gif" />
     <Content Include="Content\MountainBike.gif" />
     <Content Include="Content\RoadBike.gif" />
     <Content Include="Content\TourBike.gif" />
