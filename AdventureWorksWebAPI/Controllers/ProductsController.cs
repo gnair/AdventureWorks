@@ -17,9 +17,18 @@ namespace AdventureWorksWebAPI.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductProductPhotoes).Where(p => (p.ProductProductPhotoes.Count > 0 && p.ProductProductPhotoes.FirstOrDefault().ProductPhotoID > 1));
+            var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductProductPhotoes).Where(p => (p.ProductProductPhotoes.FirstOrDefault().ProductPhotoID > 1));
             return View(products.ToList());
         }
+
+
+        // GET: Products/Category/T
+        public ActionResult Category(string category)
+        {
+            var products = db.Products.Include(p => p.ProductModel).Include(p => p.ProductProductPhotoes).Where(p => (p.ProductLine.Equals(category) && p.ProductProductPhotoes.FirstOrDefault().ProductPhotoID > 1));
+            return View(products.ToList());
+        }
+
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

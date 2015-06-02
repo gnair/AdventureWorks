@@ -523,8 +523,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\Bike.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MountainBike.gif" />
+    <Content Include="Content\RoadBike.gif" />
+    <Content Include="Content\TourBike.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -626,6 +630,7 @@
     </None>
     <None Include="Service References\AdventureWorksService\CustomerService.wsdl" />
     <Content Include="Views\Customers\SendEmail.cshtml" />
+    <Content Include="Views\Products\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
