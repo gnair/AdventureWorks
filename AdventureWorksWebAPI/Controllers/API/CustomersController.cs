@@ -13,7 +13,7 @@ namespace AdventureWorksWebAPI
 {
     public class CustomersController : ApiController
     {
-        private AdventureWorks2014Entities db = new AdventureWorks2014Entities();
+        private AdventureWorks2012Entities db = new AdventureWorks2012Entities();
 
         // GET: api/Customers
         public IQueryable<Customer> GetCustomers()

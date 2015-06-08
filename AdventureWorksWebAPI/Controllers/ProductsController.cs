@@ -13,7 +13,7 @@ namespace AdventureWorksWebAPI.Controllers
 {
     public class ProductsController : Controller
     {
-        private AdventureWorks2014Entities db = new AdventureWorks2014Entities();
+        private AdventureWorks2012Entities db = new AdventureWorks2012Entities();
 
 
         // GET: Products

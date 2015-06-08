@@ -9,7 +9,7 @@ namespace AdventureWorksWebAPI.Controllers
 {
     public class ImagesController : Controller
     {
-        private AdventureWorks2014Entities db = new AdventureWorks2014Entities();
+        private AdventureWorks2012Entities db = new AdventureWorks2012Entities();
 
         // GET: Images/Thumbnail/5
         public ActionResult Thumbnail(int? id)

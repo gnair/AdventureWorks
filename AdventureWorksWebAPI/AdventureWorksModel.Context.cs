@@ -15,10 +15,10 @@ namespace AdventureWorksWebAPI
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class AdventureWorks2014Entities : DbContext
+    public partial class AdventureWorks2012Entities : DbContext
     {
-        public AdventureWorks2014Entities()
-            : base("name=AdventureWorks2014Entities")
+        public AdventureWorks2012Entities()
+            : base("name=AdventureWorks2012Entities")
         {
         }
     

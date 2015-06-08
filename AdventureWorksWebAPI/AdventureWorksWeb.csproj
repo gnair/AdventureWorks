@@ -243,6 +243,7 @@
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="CountryRegion.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -264,7 +265,6 @@
     <Compile Include="Customer.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="DatabaseLog.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -523,6 +523,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AdventureWorks2012_Data.mdf" />
+    <Content Include="App_Data\AdventureWorks2012_Data_log.ldf">
+      <DependentUpon>AdventureWorks2012_Data.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\Accessory.gif" />
     <Content Include="Content\Bike.png" />
@@ -637,7 +641,6 @@
     <Content Include="Views\Products\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
